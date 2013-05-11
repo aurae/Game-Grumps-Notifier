@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="appName">Game Grumps Notifier</string>
+    
+    <string name="serviceName">Grumps Notifier Service</string>
+	<string name="toggleService">Toggle Service</string>
+	<string name="serviceRunning">Notification Service is running</string>
+	<string name="serviceNotRunning">Notification Service is not running</string>
+	<string name="noConnectionAvailable">You need a network connection to grump!</string>
+	
+	<string name="minimumCheckRate">1min</string>
+	<string name="maximumCheckRate">2h</string>
+	
+	<string name="textViewSound">Notification sound:</string>
+	
+	<string name="radioNoJon">\"No, Jon.\"</string>
+	<string name="radioGrumps">\"Game Grumps!\"</string>
+	<string name="radioDefault">Default</string>
+    
+</resources>
