@@ -2,7 +2,7 @@ package de.hsb.mschnelle.grumps.vo;
 
 public class GrumpConstants {
 
-	public static final String API_KEY 				= "AIzaSyArYVpHVLw649WNWQvkG6aKR71HXNNUZt8";
+	public static final String API_KEY 				= "apikeyapikeyapikey";
 	public static final String GRUMPS_CHANNELID 	= "UC9CuvdOVfMPvKCiwdGKL3cQ";
 	public static final String GRUMPS_UPLOADSID 	= "UU9CuvdOVfMPvKCiwdGKL3cQ";
 	
