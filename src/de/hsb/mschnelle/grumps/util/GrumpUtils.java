@@ -49,7 +49,7 @@ public class GrumpUtils {
 	 * @param title
 	 * @return
 	 */
-	private static Map<String, String> parseTitle(String title) {
+	public static Map<String, String> parseTitle(String title) {
 		// Split the full video title up using a regex
 		String[] split = title.split("(\\s+)(-)(\\s+)");
 
@@ -78,7 +78,7 @@ public class GrumpUtils {
 				StringTokenizer colonTokenizer = new StringTokenizer(gameName, ":");
 				
 				gameName = colonTokenizer.nextToken();
-				episodeName = colonTokenizer.nextToken();
+				episodeName = (colonTokenizer.hasMoreTokens() ? colonTokenizer.nextToken() : null);
 				partName = secondToken;
 				showName = split[2];
 			} else {
@@ -97,6 +97,7 @@ public class GrumpUtils {
 		map.put(GrumpConstants.KEY_EPISODE, episodeName);
 		map.put(GrumpConstants.KEY_PART, partName);
 		map.put(GrumpConstants.KEY_SHOW, showName);
+		
 		return map;
 	}
 

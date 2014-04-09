@@ -10,9 +10,9 @@ import org.json.JSONException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.SharedPreferences;
-import android.util.Log;
 import de.hsb.mschnelle.grumps.abstractclasses.HTTPServiceExecutor;
 import de.hsb.mschnelle.grumps.service.GrumpCheckService;
+import de.hsb.mschnelle.grumps.util.Logger;
 import de.hsb.mschnelle.grumps.vo.GrumpConstants;
 
 /**
@@ -91,8 +91,8 @@ public class GrumpCheckExecutorYTAPIV2 extends HTTPServiceExecutor {
 		}
 		// Usual check: Compare the saved video ID with the now-newest one
 		else if (!lastVideoId.equals(videoId)) {
-			
-			Log.d(GrumpConstants.LOG_TAG, "New upload found: " + title);
+
+			Logger.d("New upload found: " + title);
 
 			// Compose thumbnail URL & notify the user. Finally save the new video ID
 			String thumbnailUrl = GrumpConstants.YT_THUMBNAIL_URL_1 + videoId + GrumpConstants.YT_THUMBNAIL_URL_2;
@@ -100,7 +100,7 @@ public class GrumpCheckExecutorYTAPIV2 extends HTTPServiceExecutor {
 			service.postNotification(title, thumbnailUrl, videoId);
 		} else
 			// Nothing new
-			Log.d(GrumpConstants.LOG_TAG, "Nothing new (latest ID: " + lastVideoId + ")");
+			Logger.d("Nothing new (latest ID: " + lastVideoId + ")");
 	}
 	
 	public String getName() {

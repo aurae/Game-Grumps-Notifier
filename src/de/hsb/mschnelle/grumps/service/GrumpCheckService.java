@@ -13,15 +13,15 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 import de.hsb.mschnelle.grumps.R;
 import de.hsb.mschnelle.grumps.abstractclasses.GrumpVideo;
 import de.hsb.mschnelle.grumps.abstractclasses.ServiceExecutor;
-import de.hsb.mschnelle.grumps.service.ytapiv2.GrumpCheckExecutorYTAPIV2;
+import de.hsb.mschnelle.grumps.service.ytapiv3.GrumpCheckExecutorYTAPIV3;
 import de.hsb.mschnelle.grumps.util.GrumpUtils;
+import de.hsb.mschnelle.grumps.util.Logger;
 import de.hsb.mschnelle.grumps.vo.GrumpConstants;
 
 public class GrumpCheckService extends WakefulIntentService {
@@ -47,24 +47,24 @@ public class GrumpCheckService extends WakefulIntentService {
 		preferences = getSharedPreferences(GrumpConstants.PREFERENCES, 0);
 		
 		// Switch the executor object here
-		delegate = new GrumpCheckExecutorYTAPIV2(this, preferences);
+		delegate = new GrumpCheckExecutorYTAPIV3(this, preferences);
 		
-		Log.d(GrumpConstants.LOG_TAG, "==============GRUMP CHECK SERVICE (" + delegate.getName() + ")==============");
+		Logger.d("==============GRUMP CHECK SERVICE (" + delegate.getName() + ")==============");
 		
 		try {
 			// Build API request
 			String request = delegate.buildRequest();
-			Log.d(GrumpConstants.LOG_TAG, "Request:");
-			Log.d(GrumpConstants.LOG_TAG, request);
+			Logger.d("Request:");
+			Logger.d(request);
 			// Execute API request
 			String result = delegate.executeRequest(request);
-			Log.d(GrumpConstants.LOG_TAG, "Response:");
-			Log.d(GrumpConstants.LOG_TAG, result);
-			Log.d(GrumpConstants.LOG_TAG, "(" + result.getBytes().length + " bytes)");
+			Logger.d("Response:");
+			Logger.d(result);
+			Logger.d("(" + result.getBytes().length + " bytes)");
 			// Process request result
 			delegate.checkResult(result);
 		} catch (Exception e) {
-			Log.d(GrumpConstants.LOG_TAG, "Exception during GrumpService execution: " + e.getClass());
+			Logger.d("Exception during GrumpService execution: " + e.getClass());
 			e.printStackTrace();
 		}
 		
@@ -84,7 +84,7 @@ public class GrumpCheckService extends WakefulIntentService {
 	
 	public void postNotification(String title, String thumbnailUrl, String videoId) {
 		this.notification(title, thumbnailUrl, videoId);
-		this.saveVideoId(videoId);
+//		this.saveVideoId(videoId);
 	}
 	
 	/**
@@ -99,7 +99,7 @@ public class GrumpCheckService extends WakefulIntentService {
 
 		// Create a GrumpVideo instance using the parameters
 		GrumpVideo video = GrumpUtils.createGrumpVideo(videoId, title, thumbnailUrl, getResources());
-
+		
 		// Get Notification manager service
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 

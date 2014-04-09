@@ -9,9 +9,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.SharedPreferences;
-import android.util.Log;
 import de.hsb.mschnelle.grumps.abstractclasses.HTTPServiceExecutor;
 import de.hsb.mschnelle.grumps.service.GrumpCheckService;
+import de.hsb.mschnelle.grumps.util.Logger;
 import de.hsb.mschnelle.grumps.vo.GrumpConstants;
 
 /**
@@ -73,14 +73,14 @@ public class GrumpCheckExecutorYTAPIV3 extends HTTPServiceExecutor {
 			// New video was found
 			String title = snippet.getString("title");
 
-			Log.d(GrumpConstants.LOG_TAG, "New upload found: " + title);
+			Logger.d("New upload found: " + title);
 
 			String thumbnailUrl = snippet.getJSONObject("thumbnails")
 					.getJSONObject("default").getString("url");
 			
 			service.postNotification(title, thumbnailUrl, videoId);
 		} else
-			Log.d(GrumpConstants.LOG_TAG, "Nothing new (latest ID: " + lastVideoId + ")");
+			Logger.d("Nothing new (latest ID: " + lastVideoId + ")");
 	}
 	
 	public String getName() {

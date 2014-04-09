@@ -29,6 +29,4 @@ public class GrumpConstants {
 	
 	public static final String EMPTY_VIDEO 			= "";
 	
-	public static final String LOG_TAG 				= "grumps";
-	
 }
