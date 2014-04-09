@@ -42,7 +42,6 @@ public class GrumpCheckService extends WakefulIntentService {
 	 * @param pi
 	 */
 	protected void doWakefulWork(Intent pi) {
-
 		// Get preference reference (hehe)
 		preferences = getSharedPreferences(GrumpConstants.PREFERENCES, 0);
 		
@@ -64,8 +63,7 @@ public class GrumpCheckService extends WakefulIntentService {
 			// Process request result
 			delegate.checkResult(result);
 		} catch (Exception e) {
-			Logger.d("Exception during GrumpService execution: " + e.getClass());
-			e.printStackTrace();
+			Logger.d("Exception during GrumpService execution: " + e.getClass(), e);
 		}
 		
 		// Stop this service
@@ -84,7 +82,7 @@ public class GrumpCheckService extends WakefulIntentService {
 	
 	public void postNotification(String title, String thumbnailUrl, String videoId) {
 		this.notification(title, thumbnailUrl, videoId);
-//		this.saveVideoId(videoId);
+		this.saveVideoId(videoId);
 	}
 	
 	/**
