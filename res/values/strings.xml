@@ -14,6 +14,9 @@
 	
 	<string name="textViewSound">Notification sound:</string>
 	
+	<string name="themeGG">Game Grumps Theme</string>
+	<string name="themeST">Steam Train Theme</string>
+	
 	<string name="radioNoJon">\"No, Jon.\"</string>
 	<string name="radioGrumps">\"Game Grumps!\"</string>
 	<string name="radioDefault">Default</string>

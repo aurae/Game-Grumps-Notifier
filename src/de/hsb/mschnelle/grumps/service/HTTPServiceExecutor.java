@@ -1,4 +1,4 @@
-package de.hsb.mschnelle.grumps.abstractclasses;
+package de.hsb.mschnelle.grumps.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,12 +8,23 @@ import java.net.URL;
 
 import org.apache.http.client.ClientProtocolException;
 
+import android.content.SharedPreferences;
+
 /**
  * Subclass for executor methods that use HTTP connections to retrieve data.
  * @author Marcel
  *
  */
 public abstract class HTTPServiceExecutor extends ServiceExecutor {
+	
+	/**
+	 * Abstract constructor
+	 * @param service
+	 * @param preferences
+	 */
+	protected HTTPServiceExecutor(GrumpCheckService service, SharedPreferences preferences) {
+		super(service, preferences);
+	}
 
 	/**
 	 * Execute API request

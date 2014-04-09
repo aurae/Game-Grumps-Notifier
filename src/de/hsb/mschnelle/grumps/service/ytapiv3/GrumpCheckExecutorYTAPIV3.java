@@ -9,8 +9,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.SharedPreferences;
-import de.hsb.mschnelle.grumps.abstractclasses.HTTPServiceExecutor;
 import de.hsb.mschnelle.grumps.service.GrumpCheckService;
+import de.hsb.mschnelle.grumps.service.HTTPServiceExecutor;
 import de.hsb.mschnelle.grumps.util.Logger;
 import de.hsb.mschnelle.grumps.vo.GrumpConstants;
 
@@ -28,10 +28,11 @@ public class GrumpCheckExecutorYTAPIV3 extends HTTPServiceExecutor {
 	
 	/**
 	 * Constructor
+	 * @param service		The Service using this executor
+	 * @param preferences	Shared preferences
 	 */
 	public GrumpCheckExecutorYTAPIV3(GrumpCheckService service, SharedPreferences preferences) {
-		this.service = service;
-		this.preferences = preferences;
+		super(service, preferences);
 	}
 
 	public String buildRequest() throws UnsupportedEncodingException {

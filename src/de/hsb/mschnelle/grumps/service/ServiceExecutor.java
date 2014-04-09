@@ -1,4 +1,4 @@
-package de.hsb.mschnelle.grumps.abstractclasses;
+package de.hsb.mschnelle.grumps.service;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -9,7 +9,6 @@ import org.json.JSONException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.SharedPreferences;
-import de.hsb.mschnelle.grumps.service.GrumpCheckService;
 
 /**
  * Abstract class for executor methods used by the WakefulIntentService.
@@ -20,10 +19,20 @@ import de.hsb.mschnelle.grumps.service.GrumpCheckService;
  */
 public abstract class ServiceExecutor {
 	
-	// Preferences
+	/** Preferences */
 	protected SharedPreferences preferences;
-	// Calling service
+	/** Calling service */
 	protected GrumpCheckService service;
+	
+	/**
+	 * Abstract constructor
+	 * @param service
+	 * @param preferences
+	 */
+	protected ServiceExecutor(GrumpCheckService service, SharedPreferences preferences) {
+		this.preferences = preferences;
+		this.service = service;
+	}
 	
 	/**
 	 * Build request

@@ -17,12 +17,11 @@ import android.support.v4.app.NotificationCompat;
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 import de.hsb.mschnelle.grumps.R;
-import de.hsb.mschnelle.grumps.abstractclasses.GrumpVideo;
-import de.hsb.mschnelle.grumps.abstractclasses.ServiceExecutor;
 import de.hsb.mschnelle.grumps.service.ytapiv3.GrumpCheckExecutorYTAPIV3;
 import de.hsb.mschnelle.grumps.util.GrumpUtils;
 import de.hsb.mschnelle.grumps.util.Logger;
 import de.hsb.mschnelle.grumps.vo.GrumpConstants;
+import de.hsb.mschnelle.grumps.vo.GrumpVideo;
 
 public class GrumpCheckService extends WakefulIntentService {
 

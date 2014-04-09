@@ -2,8 +2,6 @@ package de.hsb.mschnelle.grumps.vo;
 
 import java.util.Map;
 
-import de.hsb.mschnelle.grumps.abstractclasses.GrumpVideo;
-
 import android.content.res.Resources;
 
 /**

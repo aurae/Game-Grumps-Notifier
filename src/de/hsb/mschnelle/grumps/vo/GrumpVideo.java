@@ -1,4 +1,4 @@
-package de.hsb.mschnelle.grumps.abstractclasses;
+package de.hsb.mschnelle.grumps.vo;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -6,8 +6,6 @@ import java.net.URL;
 import java.util.Map;
 
 import de.hsb.mschnelle.grumps.R;
-import de.hsb.mschnelle.grumps.vo.GrumpConstants;
-
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

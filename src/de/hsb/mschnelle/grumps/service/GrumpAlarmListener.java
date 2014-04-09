@@ -7,7 +7,6 @@ import android.os.SystemClock;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
-
 public class GrumpAlarmListener implements WakefulIntentService.AlarmListener {
 
 	private int rate;
@@ -35,5 +34,4 @@ public class GrumpAlarmListener implements WakefulIntentService.AlarmListener {
 	public int getCurrentRate() {
 		return rate;
 	}
-
 }

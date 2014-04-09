@@ -10,8 +10,8 @@ import org.json.JSONException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.SharedPreferences;
-import de.hsb.mschnelle.grumps.abstractclasses.HTTPServiceExecutor;
 import de.hsb.mschnelle.grumps.service.GrumpCheckService;
+import de.hsb.mschnelle.grumps.service.HTTPServiceExecutor;
 import de.hsb.mschnelle.grumps.util.Logger;
 import de.hsb.mschnelle.grumps.vo.GrumpConstants;
 
@@ -28,10 +28,11 @@ public class GrumpCheckExecutorYTAPIV2 extends HTTPServiceExecutor {
 	
 	/**
 	 * Constructor
+	 * @param service		The Service using this executor
+	 * @param preferences	Shared preferences
 	 */
 	public GrumpCheckExecutorYTAPIV2(GrumpCheckService service, SharedPreferences preferences) {
-		this.service = service;
-		this.preferences = preferences;
+		super(service, preferences);
 	}
 
 	/**

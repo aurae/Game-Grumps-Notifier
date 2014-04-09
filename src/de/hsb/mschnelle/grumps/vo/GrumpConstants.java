@@ -2,7 +2,7 @@ package de.hsb.mschnelle.grumps.vo;
 
 public class GrumpConstants {
 
-	public static final String API_KEY 				= "apikeyapikeyapikey";
+	public static final String API_KEY 				= "AIzaSyBG2rRjl1TINlgTYJHlc6-VEH_LvwjIc3c";
 	public static final String GRUMPS_CHANNELID 	= "UC9CuvdOVfMPvKCiwdGKL3cQ";
 	public static final String GRUMPS_UPLOADSID 	= "UU9CuvdOVfMPvKCiwdGKL3cQ";
 	
@@ -26,7 +26,11 @@ public class GrumpConstants {
 	public static final String PREF_LASTVIDEO 		= "lastVideo";
 	public static final String PREF_SELECTEDSOUND 	= "selectedSound";
 	public static final String PREF_CHECKINTERVAL 	= "checkInterval";
-	
+	public static final String PREF_THEME			= "theme";
+
 	public static final String EMPTY_VIDEO 			= "";
+
+	public static final String THEME_GG 			= "gg";
+	public static final String THEME_ST 			= "st";
 	
 }
